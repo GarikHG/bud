@@ -38,9 +38,9 @@
  * @packageDocumentation
  */
 
-import {BudReactExtension} from './BudReactExtension'
-import {BudReactRefreshPlugin} from './BudReactRefreshPlugin'
-import {reactRefresh} from './reactRefresh'
+import {reactRefresh} from './bud.reactRefresh'
+import {BudReactExtension} from './react.extension'
+import {BudReactRefreshWebpackPlugin} from './react-refresh.plugin'
 
 /**
  * Framework interface
@@ -56,7 +56,7 @@ declare module '@roots/bud-framework' {
   }
 
   interface CompilerPlugin {
-    '@pmmmwh/react-refresh-webpack-plugin': BudReactRefreshPlugin
+    '@pmmmwh/react-refresh-webpack-plugin': BudReactRefreshWebpackPlugin
   }
 }
 

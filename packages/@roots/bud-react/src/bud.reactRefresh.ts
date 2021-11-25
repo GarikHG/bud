@@ -4,19 +4,19 @@ import type {Framework} from '@roots/bud-framework'
 /**
  * Configure react-refresh-webpack-plugin options
  */
-interface reactRefresh {
+export interface reactRefresh {
   (
     this: Framework,
     options: ReactRefreshPluginOptions,
   ): Framework
 }
 
-const reactRefresh: reactRefresh = function (userOptions) {
+export const reactRefresh: reactRefresh = function (
+  userOptions,
+) {
   this.extensions
     .get('@pmmmwh/react-refresh-webpack-plugin')
     .options.merge(userOptions)
 
   return this
 }
-
-export {reactRefresh}

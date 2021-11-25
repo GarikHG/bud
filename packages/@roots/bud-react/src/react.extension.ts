@@ -1,7 +1,7 @@
 import type {Extension} from '@roots/bud-framework'
 import type {Configuration} from 'webpack'
 
-import {BudReactRefreshPlugin} from './BudReactRefreshPlugin'
+import {BudReactRefreshWebpackPlugin} from './react-refresh.plugin'
 
 /**
  * Adds React support
@@ -11,7 +11,7 @@ import {BudReactRefreshPlugin} from './BudReactRefreshPlugin'
  *
  * @public
  */
-export interface BudReactExtension extends Extension.Module {}
+export type BudReactExtension = Extension.Module
 
 /**
  * Adds React support
@@ -40,7 +40,7 @@ export const BudReactExtension: BudReactExtension = {
 
     if (app.isDevelopment) {
       app.hooks.on('build.entry', entryHook)
-      await app.extensions.add(BudReactRefreshPlugin)
+      await app.extensions.add(BudReactRefreshWebpackPlugin)
     }
   },
 }
@@ -50,14 +50,14 @@ export const BudReactExtension: BudReactExtension = {
  *
  * @public
  */
-function addRefresh(entries, [name, assets]) {
+function addRefresh(entries, [name, entrypoint]) {
   return {
     ...(entries ?? {}),
     [name]: {
-      ...assets,
+      ...entrypoint,
       import: [
-        'react-refresh/runtime',
-        ...(assets.import ?? []),
+        require.resolve('react-refresh/runtime'),
+        ...(entrypoint.import ?? []),
       ],
     },
   }
