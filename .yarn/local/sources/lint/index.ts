@@ -2,7 +2,7 @@ import {Command} from '../Command'
 import {Option} from 'clipanion'
 
 export class LintCommand extends Command {
-  static paths = [[`kjo`, `lint`]]
+  static paths = [[`repo`, `lint`]]
 
   public all = Option.Boolean(`-a,--all`, false)
   public prettier = Option.Boolean(`-p,--prettier`, false)

@@ -8,7 +8,7 @@ const enum CODE {
 }
 
 export abstract class Command extends BaseCommand {
-  static usage = {category: `kjo`}
+  static usage = {category: `repo`}
 
   /**
    * Get manifest
@@ -23,7 +23,7 @@ export abstract class Command extends BaseCommand {
   public async $(task: string) {
     let exitCode: CODE
 
-    console.log(`[kjo] ${task}`)
+    console.log(`[repo] ${task}`)
 
     exitCode = await this.runTask(task)
 

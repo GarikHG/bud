@@ -2,7 +2,7 @@ import {Command} from '../Command'
 import {Option} from 'clipanion'
 
 export class CleanCommand extends Command {
-  static paths = [[`kjo`, `clean`]]
+  static paths = [[`repo`, `clean`]]
 
   public dfx = Option.Boolean(`-d,--dfx`, false)
 

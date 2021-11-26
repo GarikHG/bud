@@ -2,7 +2,7 @@ import {Command} from '../Command'
 import {Option} from 'clipanion'
 
 export class CompileCommand extends Command {
-  static paths = [[`kjo`, `compile`]]
+  static paths = [[`repo`, `compile`]]
 
   public package = Option.String()
 

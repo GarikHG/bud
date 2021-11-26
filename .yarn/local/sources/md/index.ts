@@ -2,7 +2,7 @@ import {Command} from '../Command'
 import {Option} from 'clipanion'
 
 export class MdCommand extends Command {
-  static paths = [[`kjo`, `md`]]
+  static paths = [[`repo`, `md`]]
 
   public site = Option.Boolean(`-s,--site`, false)
   public readme = Option.Boolean(`-r,--readme`, false)

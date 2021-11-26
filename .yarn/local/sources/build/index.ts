@@ -2,7 +2,7 @@ import {Command} from '../Command'
 import {Option} from 'clipanion'
 
 export class BuildCommand extends Command {
-  static paths = [[`kjo`, `build`]]
+  static paths = [[`repo`, `build`]]
 
   public cjs = Option.Boolean(`-c,--cjs`, false)
   public esm = Option.Boolean(`-e,--esm`, false)
@@ -41,11 +41,11 @@ export class BuildCommand extends Command {
       )
     }
 
-    await this.$(`yarn kjo compile @roots/container`)
-    await this.$(`yarn kjo compile @roots/filesystem`)
-    await this.$(`yarn kjo compile @roots/bud-dashboard`)
-    await this.$(`yarn kjo compile @roots/container`)
-    await this.$(`yarn kjo compile @roots/bud-support`)
+    await this.$(`yarn repo compile @roots/container`)
+    await this.$(`yarn repo compile @roots/filesystem`)
+    await this.$(`yarn repo compile @roots/bud-dashboard`)
+    await this.$(`yarn repo compile @roots/container`)
+    await this.$(`yarn repo compile @roots/bud-support`)
 
     if (this.clean) return
   }
