@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "yarn bud build",
-    "serve": "yarn dlx serve dist -p 8000",
+    "serve": "yarn dlx serve public -p 8080",
     "dev": "yarn bud dev"
   },
   "devDependencies": {

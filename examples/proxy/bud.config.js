@@ -10,12 +10,14 @@ module.exports = async (app) => {
       '@images': app.path('src', 'images'),
     })
     .entry({
-      js: app.path('src', 'scripts', 'app.js'),
-      css: app.path('src', 'styles', 'app.css'),
+      app: [
+        app.path('src', 'styles', 'app.css'),
+        app.path('src', 'styles', 'app.js'),
+      ],
     })
-    .template({
-      template: app.path('src', 'html', 'index.html'),
+    .hooks.on('proxy.replace', (all) => {
+      return [...all, ['replace_me', 'replaced']];
     })
     .watch([app.path('src', '**/*')])
-    .proxy();
+    .proxy('http://localhost:8080');
 };

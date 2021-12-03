@@ -323,11 +323,8 @@ export const config: Configuration = {
       overlay: true,
       log: true,
     },
-    proxy: {
-      target: 'localhost:8080',
-    },
-    host: 'localhost',
-    port: 3000,
+    proxy: 'http://localhost:8080',
+    url: 'http://localhost:3000',
     methods: ['GET', 'HEAD'],
   },
 

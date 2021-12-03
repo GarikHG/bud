@@ -1,5 +1,4 @@
 import {Index} from '../'
-import {ProxyOptions} from './'
 
 /**
  * Server configuration
@@ -19,23 +18,14 @@ export interface Configuration {
    *
    * @defaultValue localhost
    */
-  host: string
-
-  /**
-   * The development server port
-   *
-   * @defaultValue 3000
-   *
-   * @public
-   */
-  port: number
+  url: string
 
   /**
    * Proxy destination
    *
    * @public
    */
-  proxy: ProxyOptions
+  proxy: string
 
   /**
    * Files which should reload the browser when changed.

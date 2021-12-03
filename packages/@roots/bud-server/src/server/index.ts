@@ -192,7 +192,7 @@ export class Server
      * Listen
      */
     this.instance = this.application.listen(
-      this.app.store.get('server.port'),
+      this.app.store.get('server.port') ?? 3000,
       async (error: string) => {
         if (error) this.log('error', error)
 

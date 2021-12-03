@@ -7,8 +7,7 @@ export interface serve {
 export const serve: serve = function (config) {
   this as Framework
 
-  config.host && this.store.set('server.host', config.host)
-  config.port && this.store.set('server.port', config.port)
+  config.url && this.store.set('server.url', config.url)
 
   config.middleware &&
     this.store.merge('server.middleware', config.middleware)
