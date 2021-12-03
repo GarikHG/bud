@@ -1,0 +1,25 @@
+{
+  "name": "example-proxy",
+  "private": true,
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "yarn bud build",
+    "serve": "yarn dlx serve dist -p 8000",
+    "dev": "yarn bud dev"
+  },
+  "devDependencies": {
+    "@roots/bud": "workspace:packages/@roots/bud",
+    "@roots/bud-preset-recommend": "workspace:packages/@roots/bud-preset-recommend"
+  }
+}

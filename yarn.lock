@@ -11937,6 +11937,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"example-proxy@workspace:examples/proxy":
+  version: 0.0.0-use.local
+  resolution: "example-proxy@workspace:examples/proxy"
+  dependencies:
+    "@roots/bud": "workspace:packages/@roots/bud"
+    "@roots/bud-preset-recommend": "workspace:packages/@roots/bud-preset-recommend"
+  languageName: unknown
+  linkType: soft
+
 "example-react@workspace:examples/react":
   version: 0.0.0-use.local
   resolution: "example-react@workspace:examples/react"
